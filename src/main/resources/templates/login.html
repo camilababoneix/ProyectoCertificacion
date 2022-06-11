@@ -1,0 +1,55 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Log in</title>
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/> 
+<link rel="stylesheet"  th:href="@{/css/login.css}" /> 
+
+    <style>
+      .bd-placeholder-img { 		
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+</head>
+<body class= "text-center">
+<main class= "form-signin">
+	<div class="container s-m">
+	<!--	<h2 class="form-signin-heading">Por favor ingrese sus datos</h2> -->
+		<img src="img/logo_profesional_online.png" alt="Logo" />
+		<div th:if="${param.error}" class="alert alert-danger">    
+        	Usuario y/o clave inválida
+        </div>
+        <div th:if="${param.logout}" class="alert alert-success"> 
+            Cerraste sesión
+        </div>
+		<form class="form-signin mt-3" method="POST" th:action="@{/login}">
+			<p>
+				<label for="username" class="sr-only">Username</label> 
+				<input type="text" id="username" name="username" class="form-control"
+					placeholder="Username" required autofocus>
+			</p>
+			<p>
+				<label for="password" class="sr-only">Password</label> 
+				<input type="password" id="password" name="password" class="form-control"
+					placeholder="Password" required>
+			</p>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+		</form>
+		<a th:href="@{/registrate/}">Registrate</a>
+	</div>
+</main>
+</body>
+</html> 

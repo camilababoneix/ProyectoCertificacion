@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Sistema Certificación</title>
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+</head>
+<body>
+
+<h1></h1>
+
+<div class="text center" >
+	<div class="text-center">
+	<h1 class="mb-3">Bienvenido estudiante</h1>
+
+	<p> Usted está inscrito en el curso: </p>
+	
+	<p th:text="${curso.nombre}"></p>
+	<p> Fecha de inicio: </p>
+	<p th:text="${curso.fecinicio}"></p>
+	<p> Fecha de término: </p>
+	<p th:text="${curso.fectermino}"></p>
+	
+	</div>	
+</div>
+</body>
+</html>
